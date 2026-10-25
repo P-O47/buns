@@ -1,0 +1,93 @@
+local v1 = game
+
+do
+end
+
+local v2 = v1.GetService(v1, "Players")
+
+do
+end
+
+local httpService = (game:GetService("HttpService"))
+
+local function f1(p1)
+  local v3 = string.upper(tostring(p1))
+  local v4 = 1
+  local v5 = string.gsub(v3, ",", "")
+
+  if (string.find(v5, "K")) then
+    v4 = 1000
+  end
+
+  if (string.find(v5, "M")) then
+    v4 = 1000000
+  end
+
+  if (string.find(v5, "B")) then
+    v4 = 1000000000
+  end
+
+  return ((tonumber(string.match(v5, "[%d%.]+"))) or 0) * v4
+end
+
+local localPlayer = v2.LocalPlayer
+
+local function f2()
+  local v6 = localPlayer
+
+  do
+  end
+
+  do
+  end
+
+  do
+  end
+
+  do
+  end
+
+  do
+  end
+
+  return (((((localPlayer:WaitForChild("PlayerGui")):WaitForChild("Topbar")):WaitForChild("Topbar")):WaitForChild("Left")):WaitForChild("Coins")):WaitForChild("Label")
+end
+
+local v7 = (f2())
+local v8 = f1
+
+local function f3(p2, p3)
+  local v9 = string.format("ð¤ %s | ð° %s", localPlayer.Name, p3)
+
+  if p2 then
+    v9 = "START " .. v9
+  end
+
+  local v10 = httpService
+  httpService:JSONEncode({ username = "Coin Tracker", content = v9 })
+  return
+end
+
+local text = v7.Text
+local v11 = (f1(text))
+f3(true, text)
+
+task.spawn(function()
+  while (task.wait(10)) do
+    local text2
+    text2 = v7.Text
+
+    local v12
+    v12 = f1(text2)
+
+    if v12 > v11 then
+      f3(false, text2)
+    end
+
+    v11 = v12
+  end
+
+  return
+end)
+
+return
