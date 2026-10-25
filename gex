@@ -1,1112 +1,2223 @@
 local v1 = game
+
 local v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12
+
 v1:GetService("UserInputService")
 
+
+
 do
+
 end
+
+
 
 local replicatedStorage = (game:GetService("ReplicatedStorage"))
+
 local v13 = game
 
+
+
 do
+
 end
+
+
 
 local v14 = v13.GetService(v13, "Players")
 
+
+
 do
+
 end
+
+
 
 local runService = game:GetService("RunService")
 
+
+
 do
+
 end
+
+
 
 local workspace = (game:GetService("Workspace"))
+
 local localPlayer = v14.LocalPlayer
+
 local v15
 
+
+
 repeat
+
   local v16, v17
+
   v16, v17 = pcall(function() return require(replicatedStorage.Modules.Packets) end)
 
+
+
   do
+
   end
+
+
 
   if v16 and v17 then
+
     v15 = v17
+
   end
 
+
+
   task.wait(0.1)
+
 until v15
 
+
+
 local autoUtilityGui = (Instance.new("ScreenGui"))
+
 autoUtilityGui.Name = "AutoUtilityGui"
 
+
+
 do
+
 end
+
+
 
 autoUtilityGui.ResetOnSpawn = false
 
+
+
 local v18 = {
+
   pcall(function()
+
     do
+
     end
+
+
 
     autoUtilityGui.Parent = game:GetService("CoreGui")
+
     return
+
   end),
+
 }
 
+
+
 if not v18[1] then
+
   local v19
+
   v19 = localPlayer
+
   autoUtilityGui.Parent = localPlayer:WaitForChild("PlayerGui")
+
 end
+
+
 
 local instance = Instance.new("Frame", autoUtilityGui)
+
 instance.Size = UDim2.new(0, 240, 0, 320)
+
 instance.Position = UDim2.new(0.5, -120, 0.4, -160)
+
 instance.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
+
 instance.BorderColor3 = Color3.fromRGB(80, 80, 100)
+
 instance.BorderSizePixel = 2
+
 instance.Active = true
+
 instance.Draggable = true
 
+
+
 local instance2 = Instance.new("TextLabel", instance)
+
 instance2.Size = UDim2.new(1, 0, 0, 25)
+
 instance2.BackgroundTransparency = 1
+
 instance2.Text = "Auto Drop & TP"
+
 instance2.TextColor3 = Color3.fromRGB(255, 215, 0)
+
 instance2.Font = Enum.Font.GothamBold
+
 instance2.TextSize = 14
 
+
+
 local instance3 = (Instance.new("TextBox", instance))
+
 instance3.Size = UDim2.new(1, -20, 0, 25)
+
 instance3.Position = UDim2.new(0, 10, 0, 25)
+
 instance3.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+
 instance3.BorderColor3 = Color3.fromRGB(100, 100, 120)
+
 instance3.Text = "Gold"
+
 instance3.PlaceholderText = "Item to drop..."
+
 instance3.TextColor3 = Color3.fromRGB(255, 255, 255)
+
 instance3.Font = Enum.Font.SourceSans
+
 instance3.TextSize = 14
 
+
+
 local instance4 = (Instance.new("TextBox", instance))
+
 instance4.Size = UDim2.new(1, -20, 0, 25)
+
 instance4.Position = UDim2.new(0, 10, 0, 55)
+
 instance4.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+
 instance4.BorderColor3 = Color3.fromRGB(100, 100, 120)
+
 instance4.Text = "Chest"
+
 instance4.PlaceholderText = "Teleport target name..."
+
 instance4.TextColor3 = Color3.fromRGB(150, 200, 255)
+
 instance4.Font = Enum.Font.SourceSans
+
 instance4.TextSize = 14
 
+
+
 local instance5 = (Instance.new("TextButton", instance))
+
 instance5.Size = UDim2.new(1, -20, 0, 20)
+
 instance5.Position = UDim2.new(0, 10, 0, 85)
+
 instance5.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
+
 instance5.BorderColor3 = Color3.fromRGB(80, 80, 100)
+
 instance5.Text = "Teleport: OFF"
+
 instance5.TextColor3 = Color3.fromRGB(200, 200, 200)
+
 instance5.Font = Enum.Font.SourceSans
+
 instance5.TextSize = 12
 
+
+
 local instance6 = (Instance.new("TextButton", instance))
+
 instance6.Size = UDim2.new(1, -20, 0, 25)
+
 instance6.Position = UDim2.new(0, 10, 0, 110)
+
 instance6.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+
 instance6.BorderColor3 = Color3.fromRGB(80, 80, 100)
+
 instance6.TextColor3 = Color3.fromRGB(220, 220, 220)
+
 instance6.Font = Enum.Font.SourceSansBold
+
 instance6.TextSize = 14
+
 instance6.Text = "Start Drop"
 
+
+
 local instance7 = Instance.new("TextLabel", instance)
+
 instance7.Size = UDim2.new(1, 0, 0, 25)
+
 instance7.Position = UDim2.new(0, 0, 0, 145)
+
 instance7.BackgroundTransparency = 1
+
 instance7.Text = "Auto Pickup"
+
 instance7.TextColor3 = Color3.fromRGB(255, 215, 0)
+
 instance7.Font = Enum.Font.GothamBold
+
 instance7.TextSize = 14
 
+
+
 local instance8 = (Instance.new("TextBox", instance))
+
 instance8.Size = UDim2.new(1, -20, 0, 25)
+
 instance8.Position = UDim2.new(0, 10, 0, 170)
+
 instance8.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+
 instance8.BorderColor3 = Color3.fromRGB(100, 100, 120)
+
 instance8.PlaceholderText = "Items (coin2, `Gold, ...) or (All)"
+
 instance8.Text = "coin2"
+
 instance8.TextColor3 = Color3.fromRGB(255, 255, 255)
+
 instance8.Font = Enum.Font.SourceSans
+
 instance8.TextSize = 14
+
 instance8.ClearTextOnFocus = false
 
+
+
 local instance9 = (Instance.new("TextBox", instance))
+
 instance9.Size = UDim2.new(1, -20, 0, 25)
+
 instance9.Position = UDim2.new(0, 10, 0, 200)
+
 instance9.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+
 instance9.BorderColor3 = Color3.fromRGB(100, 100, 120)
+
 instance9.PlaceholderText = "Speed (1-150)"
+
 instance9.Text = "150"
+
 instance9.TextColor3 = Color3.fromRGB(255, 255, 255)
+
 instance9.Font = Enum.Font.SourceSans
+
 instance9.TextSize = 14
+
 instance9.ClearTextOnFocus = false
 
+
+
 local instance10 = (Instance.new("TextButton", instance))
+
 instance10.Size = UDim2.new(1, -20, 0, 20)
+
 instance10.Position = UDim2.new(0, 10, 0, 230)
+
 instance10.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
+
 instance10.BorderColor3 = Color3.fromRGB(80, 80, 100)
+
 instance10.Text = "Pick up in chest: OFF"
 
+
+
 local function f1()
+
   local v20 = tonumber(instance9.Text)
 
+
+
   if not v20 then
+
     return 150
+
   else
+
     return math.clamp(v20, 1, 300)
+
   end
+
 end
+
+
 
 instance10.TextColor3 = Color3.fromRGB(200, 200, 200)
+
 instance10.Font = Enum.Font.SourceSans
+
 instance10.TextSize = 12
 
+
+
 local instance11 = (Instance.new("TextButton", instance))
+
 instance11.Size = UDim2.new(1, -20, 0, 25)
+
 instance11.Position = UDim2.new(0, 10, 0, 255)
+
 instance11.BackgroundColor3 = Color3.fromRGB(50, 150, 50)
+
 instance11.BorderColor3 = Color3.fromRGB(30, 100, 30)
+
 instance11.TextColor3 = Color3.fromRGB(255, 255, 255)
+
 instance11.Font = Enum.Font.GothamBold
+
 instance11.TextSize = 14
+
 instance11.Text = "Start Pickup"
 
+
+
 local instance12 = Instance.new("TextLabel", instance)
+
 instance12.Size = UDim2.new(1, 0, 0, 20)
+
 instance12.Position = UDim2.new(0, 0, 0, 290)
+
 instance12.BackgroundTransparency = 1
+
 instance12.Text = "Say Gex | Made by S_J"
+
 instance12.TextColor3 = Color3.fromRGB(150, 150, 150)
+
 instance12.Font = Enum.Font.SourceSans
+
 instance12.TextSize = 12
 
+
+
 local v21 = false
+
 local text = "Gold"
+
 local text2 = "Chest"
+
 local v22 = false
+
 local v23 = 0
+
 local f2
 
+
+
 local function f3()
+
   local v24 = workspace
+
   local items = workspace:FindFirstChild("Items")
+
   local v25, v26, v27, v28, v29
 
+
+
   if not items then
+
     return
+
   else
+
     local character
+
     character = localPlayer.Character
 
+
+
     local v30
+
     v30 = character
 
+
+
     do
+
     end
+
+
 
     local humanoidRootPart
+
     humanoidRootPart = character and character:FindFirstChild("HumanoidRootPart")
 
+
+
     if not humanoidRootPart then
+
       return
+
     else
+
       local v31
+
       v31 = f2(humanoidRootPart.Position)
 
+
+
       if not v31 then
+
         return
+
       else
+
         do
+
         end
+
+
 
         local basePart
+
         basePart = (v31:IsA("BasePart")) and v31
 
+
+
         local basePart2
+
         basePart2 = basePart
 
+
+
         if not basePart then
+
           local primaryPart
+
           primaryPart = v31.PrimaryPart
 
+
+
           local v32
+
           v32 = primaryPart
 
+
+
           do
+
           end
+
+
 
           basePart2 = primaryPart or v31:FindFirstChildWhichIsA("BasePart")
+
         end
+
+
 
         local v33
+
         v33 = basePart2
 
+
+
         if not v33 then
+
           return
+
         else
+
           local v34
+
           v34 = v33.Position + (Vector3.new(0, text2 == "Chest" and 2.5 or 2, 0))
 
+
+
           local contents
+
           contents = v31:FindFirstChild("Contents")
 
-          do
-          end
+
 
           do
+
           end
+
+
+
+          do
+
+          end
+
+
 
           if not contents and text2 == "Chest" then
+
             contents = Instance.new("Folder")
+
             contents.Name = "Contents"
+
             contents.Parent = v31
+
           end
+
+
 
           for index, value in ipairs(items:GetChildren()) do
-            do
-            end
 
             do
+
             end
+
+
+
+            do
+
+            end
+
+
 
             if (value:IsA("BasePart")) and value.Name == text then
+
               value:PivotTo(CFrame.new(v34))
 
+
+
               if contents then
+
                 value.Parent = contents
+
               end
+
             end
+
           end
+
+
 
           return
+
         end
+
       end
+
     end
+
   end
+
 end
+
+
 
 function f2(p1)
+
   local v35 = p1
+
   local v36 = workspace
+
   local deployables = workspace:FindFirstChild("Deployables")
+
   local v37
 
+
+
   if not deployables then
+
     return nil
+
   else
+
     local v38
+
     v38 = nil
 
+
+
     local huge
+
     huge = math.huge
 
+
+
     for index2, value2 in ipairs(deployables:GetChildren()) do
+
       if value2.Name == text2 then
+
         do
+
         end
+
+
 
         local basePart3
+
         basePart3 = (value2:IsA("BasePart")) and value2
 
+
+
         local basePart4
+
         basePart4 = basePart3
 
+
+
         if not basePart3 then
+
           local primaryPart2
+
           primaryPart2 = value2.PrimaryPart
 
+
+
           local v39
+
           v39 = primaryPart2
 
+
+
           do
+
           end
+
+
 
           basePart4 = primaryPart2 or value2:FindFirstChildWhichIsA("BasePart")
+
         end
+
+
 
         if basePart4 then
+
           local magnitude
+
           magnitude = (basePart4.Position - p1).Magnitude
 
+
+
           if magnitude < huge then
+
             huge = magnitude
+
             v38 = value2
+
           end
+
         end
+
       end
+
     end
+
+
 
     return v38
+
   end
+
 end
+
+
 
 local v40 = f3
+
 local focusLost = instance3.FocusLost
 
+
+
 do
+
 end
+
+
 
 local function f4()
+
   local v41 = {}
+
   local v42 = {}
+
   local v43 = false
+
   local count = 0
 
+
+
   for match in string.gmatch(instance8.Text, "[^,]+") do
+
     local gsub
+
     gsub = match:gsub("^%s*(.-)%s*$", "%1")
 
+
+
     if (gsub:lower()) == "all" then
+
       v43 = true
+
       break
+
     else
+
       if gsub ~= "" then
+
         count = count + 1
 
+
+
         if (gsub:sub(1, 1)) == "`" then
+
           local sub
+
           sub = gsub:sub(2)
+
           table.insert(v41, sub:lower())
+
         else
+
           table.insert(v42, gsub:lower())
+
         end
+
+
 
         if count > 5 then
+
           break
+
         else
-          ::L9058460::
+
+          -- Skip to the next item naturally
+
         end
+
       else
-        goto L9058460
+
+        -- Ignore empty item names
+
       end
+
     end
+
   end
+
+
 
   if v43 then
+
     return true, {}, {}
+
   else
+
     return false, v42, v41
+
   end
+
 end
+
+
 
 focusLost:Connect(function()
+
   if instance3.Text ~= "" then
+
     text = instance3.Text
+
   end
 
+
+
   return
+
 end)
 
+
+
 do
+
 end
+
+
 
 instance4.FocusLost:Connect(function()
+
   if instance4.Text ~= "" then
+
     text2 = instance4.Text
+
   end
+
+
 
   return
+
 end)
 
+
+
 do
+
 end
 
+
+
 instance5.MouseButton1Click:Connect(function()
+
   local v44 = not v22
+
   local v45, v46, v47
+
   v22 = v44
+
   local v48 = instance5
 
-  do
-  end
+
 
   do
+
   end
 
+
+
   do
+
   end
+
+
+
+  do
+
+  end
+
+
 
   instance5.Text = v22 and "Teleport: ON" or "Teleport: OFF"
+
   local v49 = instance5
+
   local v50 = v22
 
+
+
   local color = v50
+
   color = v50 and Color3.fromRGB(40, 70, 100)
+
+
 
   local v51 = color
 
+
+
   do
+
   end
 
+
+
   instance5.BackgroundColor3 = color or Color3.fromRGB(40, 40, 50)
+
   return
+
 end)
 
+
+
 do
+
 end
 
+
+
 instance6.MouseButton1Click:Connect(function()
+
   local v52 = not v21
+
   local v53, v54, v55
+
   v21 = v52
+
   local v56 = instance6
+
   local v57 = v21
 
+
+
   local color2 = v57
+
   color2 = v57 and Color3.fromRGB(40, 100, 40)
+
+
 
   local v58 = color2
 
+
+
   do
+
   end
+
+
 
   instance6.BackgroundColor3 = color2 or Color3.fromRGB(50, 50, 50)
+
   local v59 = instance6
 
-  do
-  end
+
 
   do
+
   end
 
+
+
   do
+
   end
+
+
+
+  do
+
+  end
+
+
 
   instance6.Text = v21 and "Stop Drop" or "Start Drop"
+
   return
+
 end)
 
+
+
 do
+
 end
+
+
 
 runService.Heartbeat:Connect(function()
+
   local v60, v61, v62, v63, v64, v65
 
+
+
   if not v21 then
+
     return
+
   else
+
     if v22 then
+
       f3()
+
     end
+
+
 
     if (tick()) - v23 < 0.01 then
+
       return
+
     else
+
       local v66
+
       v66 = localPlayer
 
+
+
       local playerGui
+
       playerGui = localPlayer:FindFirstChild("PlayerGui")
 
+
+
       local v67
+
       v67 = playerGui
 
+
+
       if playerGui then
+
         do
+
         end
+
+
 
         local mainGui
+
         mainGui = localPlayer.PlayerGui:FindFirstChild("MainGui")
 
+
+
         local v68
+
         v68 = mainGui
 
+
+
         if mainGui then
+
           do
+
           end
+
+
 
           local rightPanel
+
           rightPanel = localPlayer.PlayerGui.MainGui:FindFirstChild("RightPanel")
 
+
+
           local v69
+
           v69 = rightPanel
 
+
+
           if rightPanel then
+
             do
+
             end
+
+
 
             local inventory
+
             inventory = localPlayer.PlayerGui.MainGui.RightPanel:FindFirstChild("Inventory")
 
+
+
             local list
+
             list = inventory
 
+
+
             if inventory then
+
               do
+
               end
+
+
 
               list = localPlayer.PlayerGui.MainGui.RightPanel.Inventory:FindFirstChild("List")
+
             end
+
+
 
             v69 = list
+
           end
+
+
 
           v68 = v69
+
         end
+
+
 
         v67 = v68
+
       end
+
+
 
       local v70
+
       v70 = v67
 
+
+
       if not v70 then
+
         return
+
       else
+
         for index3, value3 in ipairs(v70:GetChildren()) do
+
           local v71 = value3
 
+
+
           local v72
+
           v72 = v71
 
-          do
-          end
+
 
           do
+
           end
+
+
+
+          do
+
+          end
+
+
 
           if (v71:IsA("ImageLabel")) and v71.Name == text then
+
             pcall(function()
+
               v15.DropBagItem.send(v71.LayoutOrder)
+
               return
+
             end)
+
+
 
             v23 = (tick())
+
             break
+
           end
+
         end
 
+
+
         return
+
       end
+
     end
+
   end
+
 end)
+
+
 
 local v73 = false
+
 local v74 = false
+
 local v75 = {}
+
 local v76 = {}
+
 local v77
 
+
+
 local function f5(p2, p3)
+
   local v78 = p2
+
   local v79 = p2
+
   local v80, v81, v82
 
+
+
   if not (p2:IsA("BasePart")) then
+
     return
+
   else
+
     local v83
+
     v83 = p2
 
+
+
     if not (p2:GetAttribute("EntityID")) then
+
       return
+
     else
+
       do
+
       end
+
+
 
       local lower
+
       lower = p2.Name:lower()
 
+
+
       if v74 then
+
         v77[p2] = true
-        ::L6527681::
+
+        -- Return after caching this item
+
         return
+
       else
+
         for index4, value4 in ipairs(v75) do
+
           if lower == value4 then
+
             v77[p2] = true
 
+
+
             do
+
             end
 
+
+
             p2.Destroying:Once(function()
+
               v77[p2] = nil
+
               return
+
             end)
 
+
+
             return
+
           end
+
         end
+
+
 
         for index5, value5 in ipairs(v76) do
+
           if (string.find(lower, value5, 1, true)) then
+
             v77[p2] = true
 
+
+
             do
+
             end
+
+
 
             p2.Destroying:Once(function()
+
               v77[p2] = nil
+
               return
+
             end)
 
+
+
             return
+
           end
+
         end
 
-        goto L6527681
+
+
+        return
+
       end
+
     end
+
   end
+
 end
+
+
 
 local v84 = 300
+
 local v85 = false
+
 v77 = {}
+
 local v86 = {}
+
 local v87 = f4
+
 local v88 = f1
+
 local v89 = f5
 
+
+
 local function f6()
+
   for key in pairs(v77) do
+
     v77[key] = nil
+
   end
+
+
 
   local v90 = workspace
+
   local items2 = workspace:FindFirstChild("Items")
 
+
+
   if items2 then
+
     for index6, value6 in ipairs(items2:GetDescendants()) do
+
       f5(value6, false)
+
     end
+
   end
+
+
 
   if v85 then
+
     local v91
+
     v91 = workspace
 
+
+
     local deployables2
+
     deployables2 = workspace:FindFirstChild("Deployables")
 
+
+
     if deployables2 then
+
       for index7, value7 in ipairs(deployables2:GetChildren()) do
+
         local v92
+
         v92 = value7.Name == "Chest"
 
+
+
         local v93
+
         v93 = v92
 
+
+
         do
+
         end
+
+
 
         if v92 and value7:IsA("Model") then
+
           local primaryPart3
+
           primaryPart3 = value7.PrimaryPart
 
+
+
           local v94
+
           v94 = primaryPart3
 
+
+
           do
+
           end
+
+
 
           if primaryPart3 or value7:FindFirstChildWhichIsA("BasePart") then
+
             local contents2
+
             contents2 = value7:FindFirstChild("Contents")
 
+
+
             if contents2 then
+
               for index8, value8 in ipairs(contents2:GetDescendants()) do
+
                 f5(value8, true)
+
               end
+
             end
+
           end
+
         end
+
       end
+
     end
+
   end
 
+
+
   return
+
 end
+
+
 
 task.spawn(function()
+
   local v95 = workspace
+
   local items3 = workspace:FindFirstChild("Items")
+
   local v96
 
+
+
   while not items3 do
+
     task.wait(0.5)
 
+
+
     local v97
+
     v97 = workspace
 
+
+
     items3 = workspace:FindFirstChild("Items")
+
   end
 
+
+
   do
+
   end
+
+
 
   items3.DescendantAdded:Connect(function(descendant)
+
     f5(descendant, false)
+
     return
+
   end)
 
+
+
   return
+
 end)
 
+
+
 do
+
 end
 
+
+
 instance10.MouseButton1Click:Connect(function()
+
   local v98 = not v85
+
   local v99, v100, v101
+
   v85 = v98
+
   local v102 = instance10
 
-  do
-  end
+
 
   do
+
   end
 
+
+
   do
+
   end
+
+
+
+  do
+
+  end
+
+
 
   instance10.Text = v85 and "Pick up in chest: ON" or "Pick up in chest: OFF"
+
   local v103 = instance10
+
   local v104 = v85
 
+
+
   local color3 = v104
+
   color3 = v104 and Color3.fromRGB(50, 80, 50)
+
+
 
   local v105 = color3
 
+
+
   do
+
   end
+
+
 
   instance10.BackgroundColor3 = color3 or Color3.fromRGB(40, 40, 50)
 
+
+
   if v73 then
+
     f6()
+
   end
 
+
+
   return
+
 end)
+
+
 
 do
+
 end
+
+
 
 instance11.MouseButton1Click:Connect(function()
+
   v73 = not v73
 
+
+
   if v73 then
+
     local v106, v107
+
     v74, v106, v107 = f4()
+
     v75 = v106
+
     v76 = v107
+
     v84 = (f1())
+
     f6()
 
+
+
     instance11.Text = "Stop Pickup"
+
     instance11.BackgroundColor3 = Color3.fromRGB(180, 50, 50)
+
   else
+
     for key2 in pairs(v77) do
+
       v77[key2] = nil
+
     end
+
+
 
     instance11.Text = "Start Pickup"
+
     instance11.BackgroundColor3 = Color3.fromRGB(50, 150, 50)
+
   end
+
+
 
   return
+
 end)
+
+
 
 task.spawn(function()
+
   local v108, v109, v110, v111
 
+
+
   while true do
+
     task.wait(0.1)
 
+
+
     if not v73 then
+
     else
+
       local character2
+
       character2 = localPlayer.Character
 
+
+
       local humanoidRootPart2
+
       humanoidRootPart2 = character2
 
+
+
       if character2 then
+
         do
+
         end
+
+
 
         humanoidRootPart2 = localPlayer.Character:FindFirstChild("HumanoidRootPart")
+
       end
+
+
 
       local v112
+
       v112 = humanoidRootPart2
 
+
+
       if not v112 then
+
       else
+
         local position
+
         position = v112.Position
 
+
+
         local v113
+
         v113 = 0
 
+
+
         local v114
+
         v114 = os.clock()
 
+
+
         for key3 in pairs(v77) do
+
           if v113 >= v84 then
+
             break
+
           else
+
             if not (key3:IsDescendantOf(workspace)) then
+
               v77[key3] = nil
+
             else
+
               local entityID
+
               entityID = key3:GetAttribute("EntityID")
 
+
+
               if not entityID then
+
               else
-                do
-                end
 
                 do
+
                 end
+
+
+
+                do
+
+                end
+
+
 
                 if v86[entityID] and v114 - v86[entityID] < 0.1 then
+
                 else
+
                   local v115
+
                   v115 = key3.Position - position
 
+
+
                   if (v115:Dot(v115)) <= 900 then
+
                     v86[entityID] = v114
+
                     v15.Pickup.send(entityID)
+
                     v113 = v113 + 1
+
                   end
+
                 end
+
               end
+
             end
+
           end
+
         end
+
+
 
         if v85 then
+
           local v116
+
           v116 = workspace
 
+
+
           local deployables3
+
           deployables3 = workspace:FindFirstChild("Deployables")
 
+
+
           if deployables3 then
+
             for index9, value9 in ipairs(deployables3:GetChildren()) do
+
               local v117
+
               v117 = value9.Name == "Chest"
 
+
+
               local v118
+
               v118 = v117
 
+
+
               do
+
               end
+
+
 
               if v117 and value9:IsA("Model") then
+
                 local primaryPart4
+
                 primaryPart4 = value9.PrimaryPart
 
+
+
                 local basePart5
+
                 basePart5 = primaryPart4
+
                 basePart5 = primaryPart4 or value9:FindFirstChildWhichIsA("BasePart")
 
+
+
                 if basePart5 then
+
                   do
+
                   end
+
+
 
                   if ((basePart5.Position - position):Dot(basePart5.Position - position)) <= 900 then
+
                     local contents3
+
                     contents3 = value9:FindFirstChild("Contents")
 
+
+
                     if contents3 then
+
                       for index10, value10 in ipairs(contents3:GetDescendants()) do
+
                         if not v77[value10] then
+
                           f5(value10, true)
+
                         end
+
                       end
+
                     end
+
                   end
+
                 end
+
               end
+
             end
+
           end
+
         end
+
       end
+
     end
+
   end
+
 end)
 
+
+
 local function f7()
+
   local v119 = localPlayer
+
   local playerGui2 = localPlayer:FindFirstChild("PlayerGui")
+
   local v120, v121, v122, v123
 
+
+
   if not playerGui2 then
+
     return 100
+
   else
+
     local mainGui2
+
     mainGui2 = playerGui2:FindFirstChild("MainGui")
 
+
+
     if not mainGui2 then
+
       return 100
+
     else
+
       local panels
+
       panels = mainGui2:FindFirstChild("Panels")
 
+
+
       local v124
+
       v124 = panels
 
+
+
       if panels then
+
         do
+
         end
+
+
 
         local stats
+
         stats = mainGui2.Panels:FindFirstChild("Stats")
 
+
+
         local v125
+
         v125 = stats
 
+
+
         if stats then
+
           do
+
           end
+
+
 
           local bars
+
           bars = mainGui2.Panels.Stats:FindFirstChild("Bars")
 
+
+
           local v126
+
           v126 = bars
 
+
+
           if bars then
+
             do
+
             end
+
+
 
             local hunger
+
             hunger = mainGui2.Panels.Stats.Bars:FindFirstChild("Hunger")
 
+
+
             local valueLabel
+
             valueLabel = hunger
 
+
+
             if hunger then
+
               do
+
               end
 
+
+
               valueLabel = mainGui2.Panels.Stats.Bars.Hunger:FindFirstChild("ValueLabel")
+
             end
 
+
+
             v126 = valueLabel
+
           end
 
+
+
           v125 = v126
+
         end
 
+
+
         v124 = v125
+
       end
+
+
 
       local v127
+
       v127 = v124
 
+
+
       local v128
+
       v128 = v127
 
+
+
       do
+
       end
 
+
+
       if v127 and v127:IsA("TextLabel") then
+
         return (tonumber(v127.Text)) or 100
+
       else
+
         return 100
+
       end
+
     end
+
   end
+
 end
+
+
 
 local v129 = f7
 
+
+
 local function f8(p4)
+
   local v130 = localPlayer
+
   local v131 = p4
+
   local playerGui3 = localPlayer:FindFirstChild("PlayerGui")
+
   local v132, v133
 
+
+
   if not playerGui3 then
+
     return nil
+
   else
+
     local mainGui3
+
     mainGui3 = playerGui3:FindFirstChild("MainGui")
 
+
+
     if not mainGui3 then
+
       return nil
+
     else
+
       local rightPanel2
+
       rightPanel2 = mainGui3:FindFirstChild("RightPanel")
 
+
+
       local v134
+
       v134 = rightPanel2
 
+
+
       if rightPanel2 then
+
         do
+
         end
+
+
 
         local inventory2
+
         inventory2 = mainGui3.RightPanel:FindFirstChild("Inventory")
 
+
+
         local list2
+
         list2 = inventory2
 
+
+
         if inventory2 then
+
           do
+
           end
 
+
+
           list2 = mainGui3.RightPanel.Inventory:FindFirstChild("List")
+
         end
+
+
 
         v134 = list2
+
       end
+
+
 
       local v135
+
       v135 = v134
 
+
+
       if not v135 then
+
         return nil
+
       else
+
         local findFirstChild
+
         findFirstChild = v135:FindFirstChild(p4)
 
+
+
         if findFirstChild then
+
           return findFirstChild.LayoutOrder
+
         else
+
           return nil
+
         end
+
       end
+
     end
+
   end
+
 end
 
+
+
 task.spawn(function()
+
   while true do
+
     task.wait(5)
 
+
+
     if (f7()) <= 10 then
+
       local bluefruit
+
       bluefruit = f8("Bluefruit")
 
+
+
       if bluefruit then
+
         v15.UseBagItem.send(bluefruit)
+
         task.wait(0.2)
+
       end
+
     end
+
   end
+
 end)
+
+
 
 return
