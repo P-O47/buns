@@ -1,141 +1,57 @@
-
-local v1 = game
-
-do
-end
-
-local v2 = v1.GetService(v1, "Players")
-
-do
-end
-
 local httpService = game:GetService("HttpService")
+local players = game:GetService("Players")
+local localPlayer = players.LocalPlayer
 
--- Webhook configuration
-local WEBHOOK_URL = "https://discord.com/api/webhooks/1562955748433072329/zeZn4OPFrdHgC93617LVWXPnH8DwcMPJj9_Blqq2cph91bllXbfFHOexMz6zDoyzOJGG"
+local function f1(text)
+  local upper = string.upper(tostring(text))
+  local v1 = 1
+  local replaced = string.gsub(upper, ",", "")
 
-local requestFunction =
-    request
-    or http_request
-    or (syn and syn.request)
+  if string.find(replaced, "K") then
+    v1 = 1000
+  end
 
-local function f1(p1)
-    local v3 = string.upper(tostring(p1))
-    local v4 = 1
-    local v5 = string.gsub(v3, ",", "")
+  if string.find(replaced, "M") then
+    v1 = 1000000
+  end
 
-    if string.find(v5, "K") then
-        v4 = 1000
-    end
+  if string.find(replaced, "B") then
+    v1 = 1000000000
+  end
 
-    if string.find(v5, "M") then
-        v4 = 1000000
-    end
-
-    if string.find(v5, "B") then
-        v4 = 1000000000
-    end
-
-    return ((tonumber(string.match(v5, "[%d%.]+"))) or 0) * v4
+  return (tonumber(string.match(replaced, "[%d%.]+")) or 0) * v1
 end
 
-local localPlayer = v2.LocalPlayer
-
-local function f2()
-    local v6 = localPlayer
-
-    do
-    end
-
-    do
-    end
-
-    do
-    end
-
-    do
-    end
-
-    do
-    end
-
-    return (((((localPlayer:WaitForChild("PlayerGui")):WaitForChild("Topbar")):WaitForChild("Topbar")):WaitForChild("Left")):WaitForChild("Coins")):WaitForChild("Label")
+local function getLabel()
+  return localPlayer:WaitForChild("PlayerGui"):WaitForChild("Topbar"):WaitForChild("Topbar"):WaitForChild("Left"):WaitForChild("Coins"):WaitForChild("Label")
 end
 
-local v7 = f2()
-local v8 = f1
+local label = getLabel()
 
-local function f3(p2, p3)
-    local v9 = string.format("👤 %s | 💰 %s", localPlayer.Name, p3)
+-- https://lua-x.online
+local function f2(p1, text2)
+  local text3 = string.format("👤 %s | 💰 %s", localPlayer.Name, text2)
 
-    if p2 then
-        v9 = "START " .. v9
-    end
+  if p1 then
+    text3 = "START " .. text3
+  end
 
-    local v10 = httpService
-
-    local payload = v10:JSONEncode({
-        username = "Coin Tracker",
-        content = v9
-    })
-
-    if WEBHOOK_URL == "YOUR_DISCORD_WEBHOOK_URL" then
-        warn("[Coin Tracker] Webhook URL is not configured.")
-        return
-    end
-
-    if not requestFunction then
-        warn("[Coin Tracker] No supported client HTTP request function.")
-        return
-    end
-
-    local success, response = pcall(function()
-        return requestFunction({
-            Url = WEBHOOK_URL,
-            Method = "POST",
-            Headers = {
-                ["Content-Type"] = "application/json"
-            },
-            Body = payload
-        })
-    end)
-
-    if not success then
-        warn("[Coin Tracker] Request failed:", response)
-        return
-    end
-
-    local status = response and response.StatusCode
-
-    if status and status >= 200 and status < 300 then
-        print("[Coin Tracker] Webhook sent successfully.")
-    else
-        warn("[Coin Tracker] Webhook failed:", status, response and response.Body)
-    end
-
-    return
+  httpService:JSONEncode({ username = "Coin Tracker", content = text3 })
 end
 
-local text = v7.Text
-local v11 = f1(text)
-f3(true, text)
+local text4 = label.Text
+local v2 = f1(text4)
+f2(true, text4)
 
 task.spawn(function()
-    while task.wait(10) do
-        local text2
-        text2 = v7.Text
+  while task.wait(10) do
+    local text5 = label.Text
+    local v3 = f1(text5)
 
-        local v12
-        v12 = f1(text2)
-
-        if v12 > v11 then
-            f3(false, text2)
-        end
-
-        v11 = v12
+    if v3 > v2 then
+      f2(false, text5)
     end
 
-    return
+    v2 = v3
+  end
 end)
-
-return
