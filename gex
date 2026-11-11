@@ -176,7 +176,7 @@ local instance12 = Instance.new("TextLabel", instance)
 instance12.Size = UDim2.new(1, 0, 0, 20)
 instance12.Position = UDim2.new(0, 0, 0, 290)
 instance12.BackgroundTransparency = 1
-instance12.Text = "Say Gex | Made by S_J"
+instance12.Text = "Mochi"
 instance12.TextColor3 = Color3.fromRGB(150, 150, 150)
 instance12.Font = Enum.Font.SourceSans
 instance12.TextSize = 12
@@ -300,7 +300,6 @@ end)
 instance6.MouseButton1Click:Connect(function()
   flag2 = not flag2
 
--- https://lua-x.online
   instance6.BackgroundColor3 = flag2 and Color3.fromRGB(40, 100, 40)
     or Color3.fromRGB(50, 50, 50)
 
